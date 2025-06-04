@@ -16,14 +16,29 @@
         </tr>
         
         <%for(user of users){ %>
-    <tr>
+      <tr>
         <td> <%=user.id%></td>
         <td style="color:black;"><%=user.username%></td>
         <td style="color:blue;"><%=user.email%></td>
-    </tr>
-   <% }%>
+        <td>
+            <form  method="get"action="/users/<%=user.id%>/edit">
+                <button>    Edit userName</button>
+            </form>
+          </td>
 
-    </table>
+           <td>
+            <form  method="get"action="/users/<%=user.id%>/delete">
+                <button> delete </button>
+            </form>
+          </td>
+       </tr>
+        <% }%>
+
+      </table>
+
+       <form  method="get"action="/users/new">
+                <button style="height: 50px; width: 200px;">   Add the new user into the table </button>
+            </form>
     </div>
    
 </body>
